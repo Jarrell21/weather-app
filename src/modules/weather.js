@@ -1,32 +1,29 @@
 const weatherModule = (() => {
   const apiKey = 'ccaa29ffc6e74301d0c01334f31ddd78';
 
-  const getCityName = async (cityName) => {
+  const getData = async (cityName, unit) => {
     try {
-      const data = await getData(cityName);
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
 
-      return data.name;
-    } catch (error) {
-      return error;
-    }
-  };
+      if (unit === 'metric') {
+        apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+      }
 
-  const getData = async (cityName) => {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
-    try {
+      if (unit === 'imperial') {
+        apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`;
+      }
+
       const response = await fetch(apiUrl, { mode: 'cors' });
 
       const data = await response.json();
 
       return data;
     } catch (error) {
-      console.log(error.message);
+      return error;
     }
   };
 
-  const getWeather = () => getData().weather;
-
-  return { getData, getWeather, getCityName };
+  return { getData };
 })();
 
 export default weatherModule;
