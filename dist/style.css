@@ -1,7 +1,41 @@
+:root {
+    --primary-color: rgb(111, 157, 255);
+    --secondary-color: rgb(228, 228, 228);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: url('../src/icons/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 20px;
+    height: 100%;
+    max-width: 1000px;
+    margin-top: 20px;
 }
 
 input {
@@ -10,37 +44,46 @@ input {
     border-radius: 10px;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+button {
+    border-radius: 5px;
+    padding: 5px;
 }
 
-header {
-    padding: 20px;
+button:hover {
+    background-color: rgb(85, 136, 248);
+    cursor: pointer;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    height: 100%;
-    max-width: 1000px;
-    margin-top: 20px;
+.active {
+    background-color: var(--primary-color);
 }
 
 .info-container {
+    max-width: 650px;
     display: flex;
-    flex-direction: column;
-    border: solid 1px black;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: white;
     padding: 1rem;
-    max-width: 500px;
+    font-size: 1.2rem;
 }
 
-.city-name {
-    font-size: 1.2rem;
+.left-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-icon {
+    height: 120px;
+    width: auto;
+}
+
+.mid-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 20px;
 }
 
 .weather-description {
@@ -48,16 +91,42 @@ main {
     text-transform: capitalize;
 }
 
-.weather-icon {
-    width: 100px;
-    height: auto;
+/* .city-name {
+    font-size: 1.2rem;
 }
+
+.temperature{} */
+
+.right-panel {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-start;
+    gap: 5px;
+}
+
 
 @media (min-width: 320px) {
     main {
         width: 100%;
     }
+
     .info-container {
+        flex-direction: column;
+        align-items: center;
         width: 90%;
+    }
+
+    .right-panel {
+        width: 100%;
+    }
+}
+
+@media (min-width: 500px) {
+    .info-container {
+        flex-direction: row;
+    }
+
+    .right-panel {
+        width: 20%;
     }
 }
