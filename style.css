@@ -4,9 +4,60 @@
     box-sizing: border-box;
 }
 
+input {
+    height: 2rem;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
     height: 100vh;
+}
+
+header {
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    padding: 1rem;
+    max-width: 500px;
+}
+
+.city-name {
+    font-size: 1.2rem;
+}
+
+.weather-description {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.weather-icon {
+    width: 100px;
+    height: auto;
+}
+
+@media (min-width: 320px) {
+    main {
+        width: 100%;
+    }
+    .info-container {
+        width: 90%;
+    }
 }
