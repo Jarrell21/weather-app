@@ -56,7 +56,7 @@ const UI = (() => {
     if (unit === 'metric') {
       container.innerHTML = `
       <div class="left-panel">
-        <img src="./icons/${weatherIcon}.png" class="weather-icon">
+        <img src="icons/${weatherIcon}.png" class="weather-icon">
       </div>
       <div class="right-panel">
         <span class="weather-description">${weatherDescription}</span>
@@ -69,7 +69,7 @@ const UI = (() => {
     } else if (unit === 'imperial') {
       container.innerHTML = `
         <div class="left-panel">
-          <img src="./icons/${weatherIcon}.png" class="weather-icon">
+          <img src="icons/${weatherIcon}.png" class="weather-icon">
         </div>
         <div class="right-panel">
           <span class="weather-description">${weatherDescription}</span>
