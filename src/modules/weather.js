@@ -3,7 +3,7 @@ const weatherModule = (() => {
 
   const getData = async (cityName, unit) => {
     try {
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
+      let apiUrl = '';
 
       if (unit === 'metric') {
         apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
