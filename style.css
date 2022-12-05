@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: url('../dist/icons/bg.jpg');
+    background: url('./icons/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -59,7 +59,7 @@ button:hover {
 }
 
 .info-container {
-    max-width: 650px;
+    max-width: 500px;
     display: flex;
     gap: 10px;
     border-radius: 10px;
@@ -79,7 +79,7 @@ button:hover {
     width: auto;
 }
 
-.mid-panel {
+.right-panel {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -91,13 +91,11 @@ button:hover {
     text-transform: capitalize;
 }
 
-/* .city-name {
-    font-size: 1.2rem;
+footer {
+    padding: 5px;
 }
 
-.temperature{} */
-
-.right-panel {
+.unit-buttons {
     display: flex;
     justify-content: flex-end;
     align-self: flex-start;
@@ -115,18 +113,10 @@ button:hover {
         align-items: center;
         width: 90%;
     }
-
-    .right-panel {
-        width: 100%;
-    }
 }
 
 @media (min-width: 500px) {
     .info-container {
         flex-direction: row;
-    }
-
-    .right-panel {
-        width: 20%;
     }
 }
